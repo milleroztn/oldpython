@@ -7,11 +7,13 @@
     <py-env>
       - random
       - time
-      - sys.stdout
+      - sys
     </py-env>
     </head>
     <body>
       <py-script >
+        
+from sys import stdout
 
 print("Input your options one at a time, followed by the Enter key.\n\
 (Enter an empty line at any time and I will select your choice.)\n")
