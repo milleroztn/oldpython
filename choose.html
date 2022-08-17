@@ -4,12 +4,14 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
     <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <py-env>
+      - random
+      - time
+      - sys.stdout
+    </py-env>
     </head>
     <body>
       <py-script >
-import random
-import time
-from sys import stdout
 
 print("Input your options one at a time, followed by the Enter key.\n\
 (Enter an empty line at any time and I will select your choice.)\n")
