@@ -4,15 +4,11 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
     <script defer src="https://pyscript.net/latest/pyscript.js"></script>
-    <py-env>
-      - random
-      - time
-      - sys
-    </py-env>
     </head>
     <body>
       <py-script >
-        
+import random
+import time
 from sys import stdout
 
 print("Input your options one at a time, followed by the Enter key.\n\
@@ -28,7 +24,7 @@ while c != "":
         break
     list.append(c.upper())
     count += 1
-    
+
 print("\nI will now choose for you...\n")
 num = random.randrange(0,len(list))
 choice = list[num]
@@ -41,5 +37,5 @@ stdout.write("  "+choice)
 time.sleep(1)
 input("\n\n\nPress Enter to Exit")
       </py-script>
-    </body>
+  </body>
 </html>
