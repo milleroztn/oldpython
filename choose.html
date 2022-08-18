@@ -5,37 +5,30 @@
     <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
     <script defer src="https://pyscript.net/latest/pyscript.js"></script>
     </head>
-    <body>
-      <py-script >
-import random
-import time
-from sys import stdout
+    <body>    
+  <div>Type an sample input here</div>
+  <input type="text" id="test-input"/>
+  <button id="submit-button" type="submit" pys-onClick="my_function">OK</button>
+  <div id="test-output"></div>
 
-print("Input your options one at a time, followed by the Enter key.\n\
-(Enter an empty line at any time and I will select your choice.)\n")
+<py-script>
+from js import console
 
-list = []
-c = None
-count = 1
+def my_function(*args, **kwargs):
 
-while c != "":
-    c = input("Option "+str(count)+": ")
-    if c == "":
-        break
-    list.append(c.upper())
-    count += 1
+    #print('args:', args)
+    #print('kwargs:', kwargs)
 
-print("\nI will now choose for you...\n")
-num = random.randrange(0,len(list))
-choice = list[num]
+    console.log(f'args: {args}')
+    console.log(f'kwargs: {kwargs}')
+    
+    text = Element('test-input').element.value
 
-time.sleep(1)
-stdout.write("\rYour choice is...")
-time.sleep(1)
-stdout.write("  "+choice)
+    #print('text:', text)
+    console.log(f'text: {text}')
 
-time.sleep(1)
-input("\n\n\nPress Enter to Exit")
-      </py-script>
+    Element('test-output').element.innerText = text
+</py-script>
+      
   </body>
 </html>
